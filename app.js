@@ -1,12 +1,3 @@
-/* app.js — Anivio interactive behavior
-   - Carousel
-   - Category + Search filtering
-   - Planner (localStorage + conflict checks)
-   - Ranking badges
-   - Forms (support, newsletter)
-   - Small toast notifications
-   - Quick-add popover + login gating + scroll animations
-*/
 
 (() => {
   'use strict';

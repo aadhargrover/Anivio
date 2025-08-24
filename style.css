@@ -198,6 +198,9 @@ h1,h2,h3,h4,h5,.hero-title,.section-title {
   box-shadow: 0 20px 44px rgba(224,6,51,.28);
 }
 
+
+
+
 /* categories */
 .category-menu{ display:flex; gap:12px; flex-wrap:wrap; margin-top:6px; align-items:center; }
 .category-menu li{
@@ -236,7 +239,7 @@ input.search-bar:focus {
 input.search-bar-wrapper { position: relative; }
 input.search-bar + .search-icon,
 .search-container::before {
-  content: '🔍';
+  content: '';
   position: relative;
   left: 12px;
   top: 0;
@@ -262,6 +265,12 @@ input.search-bar + .search-icon,
   background: linear-gradient(180deg,var(--red),var(--red-2)); color:#fff; box-shadow: var(--glow); transition: transform .16s ease;
 }
 .planner-btn:hover{ transform: translateY(-3px); box-shadow: 0 22px 44px rgba(224,6,51,.22); }
+
+#watch-now {
+  opacity: 1 !important;
+  transform: none !important;
+  display: block !important;
+}
 
 /* ---------- Spotlight 3D (fixed) ---------- */
 /* Add perspective on the grid so children can have 3D transforms while staying clipped nicely */
@@ -516,6 +525,8 @@ input.search-bar + .search-icon,
   animation: scaleUp 0.28s ease;
 }
 
+
+
 .login-box h2 { font-size: 1.9rem; font-weight: 900; text-align: center; color: var(--white); margin:4px 0 8px; }
 .login-box label{ font-size:0.95rem; font-weight:700; color:#dedede; }
 .login-box input{ width:100%; padding:12px 14px; border-radius:12px; border:1px solid #232323; background:#0b0b0b; color:var(--white); }
@@ -555,5 +566,12 @@ input.search-bar + .search-icon,
   .lead{ font-size: 0.98rem; }
   .anime-grid{ gap:18px; grid-template-columns: 1fr; }
 }
+
+@media (max-width: 768px) {
+  [data-aos] {
+    transition-delay: 0 !important;
+  }
+}
+
 
 /* End */
