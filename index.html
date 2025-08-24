@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anivio — Anime Hub</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="logo">ANIVIO</div>
+    <nav class="nav-links">
+      <a href="#watch-now">Watch Now</a>
+      <a href="#spotlight">Spotlight</a>
+      <a href="#ranking">Ranking</a>
+      <a href="#upcoming">Upcoming</a>
+      <a href="#support">Support</a>
+      <a href="#planner">Planner</a>
+    </nav>
+  </header>
+
+  <!-- ================= HERO / CAROUSEL ================= -->
+  <section id="home" class="carousel" aria-label="Featured anime">
+    <div class="list">
+      <!-- Slide 1 — One Piece (using Zoro image) -->
+      <article class="item">
+        <img src="D:\Anivio\image\one piece.png" alt="One Piece — Roronoa Zoro"/>
+        <div class="content">
+          <h1 class="hero-title"><span>One Piece</span></h1>
+          <p class="hero-sub">A VOYAGE OF AMBITION, FREEDOM AND UNBREAKABLE CREWMATES .</p>
+          <div class="hero-cta">
+            <button class="btn btn-primary">Watch Trailer</button>
+            <button class="btn btn-ghost">Add to Planner</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Slide 2 — Blue Lock -->
+      <article class="item">
+        <img src="D:\Anivio\image\Naruto.jpg" alt="Blue Lock"/>
+        <div class="content">
+          <h1 class="hero-title"><span>Naruto</span></h1>
+          <p class="hero-sub">A NINJA’S JOURNEY OF FRIENDSHIP, PERSEVERANCE, AND CHASING IMPOSSIBLE DREAMS.</p>
+          <div class="hero-cta">
+            <button class="btn btn-primary">Watch Trailer</button>
+            <button class="btn btn-ghost">Add to Planner</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Slide 3 — Classroom of the Elite -->
+      <article class="item">
+        <img src="image/classroom of elite.jpg" alt="Classroom of the Elite"/>
+        <div class="content">
+          <h1 class="hero-title"><span>Classroom</span> of the Elite</h1>
+          <p class="hero-sub">ACADEMICS, COMPETITION, AND PSYCHOLOGICAL WARFARE IN JAPAN’S TOP ACADEMY.</p>
+          <div class="hero-cta">
+            <button class="btn btn-primary">Watch Trailer</button>
+            <button class="btn btn-ghost">Add to Planner</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Slide 4 — Demon Slayer -->
+      <article class="item">
+        <img src="image/Demon Slayer.png" alt="Demon Slayer"/>
+        <div class="content">
+          <h1 class="hero-title"><span>Demon Slayer</span></h1>
+          <p class="hero-sub">FAMILY TIES AND UNYIELDING RESOLVE AGAINST THE DARKNESS OF NIGHT.</p>
+          <div class="hero-cta">
+            <button class="btn btn-primary">Watch Trailer</button>
+            <button class="btn btn-ghost">Add to Planner</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Slide 5 — Chainsaw Man -->
+      <article class="item">
+        <img src="image/chainsaw man.jpg" alt="Chainsaw Man"/>
+        <div class="content">
+          <h1 class="hero-title"><span>Chainsaw Man</span></h1>
+          <p class="hero-sub">DEMONS, DEBTS, AND A PERILOUS DREAM OF NORMALCY.</p>
+          <div class="hero-cta">
+            <button class="btn btn-primary">Watch Trailer</button>
+            <button class="btn btn-ghost">Add to Planner</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Slide 6 — Your Name -->
+      <article class="item">
+        <img src="image/your name.jpg" alt="Your Name"/>
+        <div class="content">
+          <h1 class="hero-title"><span>Your Name</span></h1>
+          <p class="hero-sub">TWO SOULS INTERTWINED ACROSS TIME, DISTANCE, AND DESTINY</p>
+          <div class="hero-cta">
+            <button class="btn btn-primary">Watch Trailer</button>
+            <button class="btn btn-ghost">Add to Planner</button>
+          </div>
+        </div>
+      </article>
+
+       <article class="item">
+        <img src="image/Gojo Satoru.png" alt="Your Name"/>
+        <div class="content">
+          <h1 class="hero-title"><span>Jujutsu Kaisen</span></h1>
+          <p class="hero-sub">CURSES, SORCERY, AND AN UNYIELDING FIGHT AGAINST DARKNESS</p>
+          <div class="hero-cta">
+            <button class="btn btn-primary">Watch Trailer</button>
+            <button class="btn btn-ghost">Add to Planner</button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Controls -->
+    <div class="arrows">
+      <button id="prev" class="arrow" aria-label="Previous slide">&lt;</button>
+      <button id="next" class="arrow" aria-label="Next slide">&gt;</button>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="time" aria-hidden="true"></div>
+  </section>
+
+  <!-- ================= WATCH NOW (formerly Trending) ================= -->
+<section id="watch-now" class="section">
+  <div class="container">
+    <div class="section-head">
+    <header class="section-head" data-aos="fade-up">
+      <h2 class="kicker">STREAM THE ACTION</h2>
+      <h3 class="title">WATCH NOW, DIVE INTO THE WORLD OF ANIME</h3>
+      <p class="lead">EXPLORE EPIC BATTLES, HEARTFELT STORIES, AND UNFORGETTABLE MOMENTS</p>
+    </header>
+
+      <!-- Wide Search Bar -->
+      <div class="search-container">
+        <input type="text" id="anime-search" placeholder="Search anime..." class="search-bar" />
+      </div>
+
+      <!-- Horizontal Category Menu -->
+      <ul class="category-menu">
+        <li data-category="all" class="active">All</li>
+        <li data-category="shonen">Shonen</li>
+        <li data-category="action">Action</li>
+        <li data-category="romance">Romance</li>
+        <li data-category="sports">Sports</li>
+        <li data-category="psychological">Psychological</li>
+        <li data-category="drama">Drama</li>
+        <li data-category="dark">Dark</li>
+      </ul>
+    </div>
+
+    <!-- Anime Grid -->
+    <div class="anime-grid">
+
+      <div class="anime-card shonen action">
+        <img src="image\Dragon Ball z.jpg" alt="Dragon Ball Z" />
+        <h3 class="card-title">Dragon Ball Z</h3>
+        <p class="card-text">The legendary journey of Goku and friends as they battle powerful foes.</p>
+        <button class="watch-btn login-required">WATCH NOW</button>
+        <button class="planner-btn">Add to Planner</button>
+      </div>
+
+      <div class="anime-card shonen action">
+        <img src="image/Zoro.jpg" alt="Roronoa Zoro (One Piece)" />
+        <h3 class="card-title">One Piece</h3>
+        <p class="card-text">Luffy sails to become Pirate King with his loyal crew.</p>
+        <button class="watch-btn login-required">WATCH NOW</button>
+        <button class="planner-btn">Add to Planner</button>
+      </div>
+
+      <div class="anime-card shonen action">
+        <img src="image\Naruto.jpg" alt="Roronoa Zoro (One Piece)" />
+        <h3 class="card-title">Naruto</h3>
+        <p class="card-text">Explore the journey from hidden leaf to hero.</p>
+        <button class="watch-btn login-required">WATCH NOW</button>
+        <button class="planner-btn">Add to Planner</button>
+      </div>
+
+      <div class="anime-card shonen action">
+        <img src="image\bleach.jpg" alt="Bleach" />
+        <h3 class="card-title">Bleach</h3>
+        <p class="card-text">Ichigo Kurosaki becomes a Soul Reaper and protects the world from Hollows.</p>
+        <button class="watch-btn login-required">WATCH NOW</button>
+        <button class="planner-btn">Add to Planner</button>
+      </div>
+
+      <div class="anime-card psychological dark">
+        <img src="image\Death note.jpg" alt="Death Note" />
+        <h3 class="card-title">Death Note</h3>
+        <p class="card-text">A battle of wits between Light Yagami and the mysterious detective L.</p>
+        <button class="watch-btn login-required">WATCH NOW</button>
+        <button class="planner-btn">Add to Planner</button>
+      </div>
+
+      <div class="anime-card shonen action">
+        <img src="image\Demon Slayer.png" alt="Demon Slayer" />
+        <h3 class="card-title">Demon Slayer</h3>
+        <p class="card-text">Tanjiro Kamado fights demons to save his sister Nezuko.</p>
+        <button class="watch-btn login-required">WATCH NOW</button>
+        <button class="planner-btn">Add to Planner</button>
+      </div>
+
+      <div class="anime-card shonen action dark">
+        <img src="image/chainsaw man.jpg" alt="Chainsaw Man" />
+        <h3 class="card-title">Chainsaw Man</h3>
+        <p class="card-text">Denji battles devils after merging with his pet Pochita.</p>
+        <button class="watch-btn login-required">WATCH NOW</button>
+        <button class="planner-btn">Add to Planner</button>
+      </div>
+
+      <div class="anime-card sports shonen">
+        <img src="image/blue lock.jpg" alt="Blue Lock" />
+        <h3 class="card-title">Blue Lock</h3>
+        <p class="card-text">The most intense soccer training program in Japan seeks the best striker.</p>
+        <button class="watch-btn login-required">WATCH NOW</button>
+        <button class="planner-btn">Add to Planner</button>
+      </div>
+
+      <div class="anime-card romance drama">
+        <img src="image\your name.jpg" alt="Your Name" />
+        <h3 class="card-title">Your Name</h3>
+        <p class="card-text">Two strangers mysteriously connected through dreams and fate.</p>
+        <button class="watch-btn login-required">WATCH NOW</button>
+        <button class="planner-btn">Add to Planner</button>
+      </div>
+
+      <div class="anime-card romance drama">
+        <img src="image\i wanna eat your pancreas.avif" alt="I Want to Eat Your Pancreas" />
+        <h3 class="card-title">I Want to Eat Your Pancreas</h3>
+        <p class="card-text">A bittersweet romance that teaches the meaning of life and death.</p>
+        <button class="watch-btn login-required">WATCH NOW</button>
+        <button class="planner-btn">Add to Planner</button>
+      </div>
+
+      <div class="anime-card sports shonen">
+        <img src="image\Hajime no ippo.jpeg" alt="Hajime no Ippo" />
+        <h3 class="card-title">Hajime no Ippo</h3>
+        <p class="card-text">A young boxer’s journey to greatness in the ring.</p>
+        <button class="watch-btn login-required">WATCH NOW</button>
+        <button class="planner-btn">Add to Planner</button>
+      </div>
+
+      <div class="anime-card shonen action">
+        <img src="image\vinland saga.jpg" alt="Vinland Saga" />
+        <h3 class="card-title">Vinland Saga</h3>
+        <p class="card-text">A tale of vengeance and redemption set in the Viking era.</p>
+        <button class="watch-btn login-required">WATCH NOW</button>
+        <button class="planner-btn">Add to Planner</button>
+      </div>
+
+      <div class="anime-card dark action">
+        <img src="image\berserk.jpg" alt="Berserk" />
+        <h3 class="card-title">Berserk</h3>
+        <p class="card-text">The dark journey of Guts through a brutal and unforgiving world.</p>
+        <button class="watch-btn login-required">WATCH NOW</button>
+        <button class="planner-btn">Add to Planner</button>
+      </div>
+
+      <div class="anime-card shonen action">
+        <img src="image\Gojo Satoru.png" alt="Gojo Satoru (Jujutsu Kaisen)" />
+        <h3 class="card-title">Jujutsu Kaisen</h3>
+        <p class="card-text">Gojo Satoru protects students from curses with overwhelming power.</p>
+        <button class="watch-btn login-required">WATCH NOW</button>
+        <button class="planner-btn">Add to Planner</button>
+      </div>
+
+      <div class="anime-card psychological drama">
+        <img src="image\classroom of elite.jpg" alt="Classroom of the Elite" />
+        <h3 class="card-title">Classroom of the Elite</h3>
+        <p class="card-text">Students compete in a cutthroat battle of intellect and survival.</p>
+        <button class="watch-btn login-required">WATCH NOW</button>
+        <button class="planner-btn">Add to Planner</button>
+      </div>
+
+      <div class="anime-card dark action">
+        <img src="image/hells paradise.jpg" alt="Hell's Paradise" />
+        <h3 class="card-title">Hell's Paradise</h3>
+        <p class="card-text">Assassins fight for survival on a deadly island of secrets.</p>
+        <button class="watch-btn login-required">Watch</button>
+        <button class="planner-btn">Add to Planner</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- ================= SPOTLIGHT (Animated 3D) ================= -->
+  <section id="spotlight" class="spotlight section">
+    <header class="section-head" data-aos="fade-up">
+      <h2 class="kicker">SHINING THE FOCUS</h2>
+      <h3 class="title">SPOTLIGHT FEATURES ON TOP ANIME HITS</h3>
+      <p class="lead">DISCOVER THE CHARACTERS, STORIES, AND WORLDS THAT ARE ON TOP RIGHT NOW.</p>
+    </header>
+
+    <div class="spotlight-grid" data-aos="fade-up">
+      <!-- 3D tilt cards using provided images -->
+      <article class="spotlight-card">
+        <div class="card-3d">
+          <div class="card-face card-front">
+            <img src="image/berserk.jpg" alt="Berserk Spotlight"/>
+            <h4 class="card-overlay">Berserk — Rage Against Destiny</h4>
+          </div>
+          <div class="card-face card-back">
+            <h4>Steel & Eclipse</h4>
+            <p>Relentless action and somber beauty define this dark fantasy classic.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="spotlight-card">
+        <div class="card-3d">
+          <div class="card-face card-front">
+            <img src="image/Death Note.jpg" alt="Death Note Spotlight"/>
+            <h4 class="card-overlay">Death Note — Power of a Name</h4>
+          </div>
+          <div class="card-face card-back">
+            <h4>Mind Games</h4>
+            <p>A razor-edged duel where every move redraws the board.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="spotlight-card">
+        <div class="card-3d">
+          <div class="card-face card-front">
+            <img src="image\vinland saga.jpg" alt="Vinland Saga Spotlight"/>
+            <h4 class="card-overlay">Vinland Saga — Blood and Honor</h4>
+          </div>
+          <div class="card-face card-back">
+            <h4>Paths of War</h4>
+            <p>Honor and hate collide on the long road to redemption.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="spotlight-card">
+        <div class="card-3d">
+          <div class="card-face card-front">
+            <img src="image/classroom of elite.jpg" alt="Classroom of the Elite Spotlight"/>
+            <h4 class="card-overlay">Classroom of the Elite — Survival of Genius</h4>
+          </div>
+          <div class="card-face card-back">
+            <h4>Calculated Moves</h4>
+            <p>Cold logic behind warm smiles—an academy built on games.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="spotlight-card">
+        <div class="card-3d">
+          <div class="card-face card-front">
+            <img src="image\naruto character.jpg" alt="Classroom of the Elite Spotlight"/>
+            <h4 class="card-overlay">Naruto — Dream. Train. Believe.</h4>
+          </div>
+          <div class="card-face card-back">
+            <h4>Calculated Moves</h4>
+            <p>Cold logic behind warm smiles—an academy built on games.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="spotlight-card">
+        <div class="card-3d">
+          <div class="card-face card-front">
+            <img src="image\i wanna eat your pancreas.avif" alt="Classroom of the Elite Spotlight"/>
+            <h4 class="card-overlay">I Want to Eat Your Pancreas — A Love Beyond Time</h4>
+          </div>
+          <div class="card-face card-back">
+            <h4>Calculated Moves</h4>
+            <p>Cold logic behind warm smiles—an academy built on games.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= CHARACTER RANKING (Numbered) ================= -->
+  <section class="ranking" id="ranking">
+  <div class="container">
+    <header class="section-head" data-aos="fade-up">
+      <h2 class="kicker">POWER, POPULARITY, PRESTIGE</h2>
+      <h3 class="title">CHARACTER RANKINGS THAT DEFINE THE FANDOM</h3>
+      <p class="lead">WHO RULES THE ANIME WORLD? FIND OUT HERE.</p>
+    </header>
+    <div class="ranking-grid">
+
+      <div class="rank-card">
+        <span class="rank">Top 1</span>
+        <img src="image/luffy.jpg" alt="Monkey D. Luffy" />
+        <h3>Monkey D. Luffy</h3>
+      </div>
+
+      <div class="rank-card">
+        <span class="rank">Top 2</span>
+        <img src="image\Zoro.jpg" alt="Roronoa Zoro" />
+        <h3>Roronoa Zoro</h3>
+      </div>
+
+      <div class="rank-card">
+        <span class="rank">Top 3</span>
+        <img src="image\jujutsu kaisen.jpg" alt="Gojo Satoru" />
+        <h3>Gojo Satoru</h3>
+      </div>
+
+      <div class="rank-card">
+        <span class="rank">Top 4</span>
+        <img src="image\goku.avif" alt="Goku" />
+        <h3>Goku</h3>
+      </div>
+
+      <div class="rank-card">
+        <span class="rank">Top 5</span>
+        <img src="image\ichigo bleach.jpg" alt="Ichigo Kurosaki" />
+        <h3>Ichigo Kurosaki</h3>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- ================= UPCOMING RELEASES ================= -->
+  <section id="upcoming" class="upcoming section">
+    <header class="section-head" data-aos="fade-up">
+      <h2 class="kicker">WHAT’S NEXT</h2>
+      <h3 class="title">UPCOMING ANIME YOU CAN’T MISS</h3>
+      <p class="lead">STAY AHEAD WITH THE HOTTEST NEW RELEASES.</p>
+    </header>
+
+    <div class="upcoming-grid" data-aos="fade-up">
+      <article class="release-card">
+        <img src="image/chainsaw man.jpg" alt="Chainsaw Man — New Season"/>
+        <div class="release-meta">
+          <span class="badge">TBA</span>
+          <h4>Chainsaw Man — New Season</h4>
+        </div>
+      </article>
+
+      <article class="release-card">
+        <img src="image/hells paradise.jpg" alt="Hell’s Paradise — Season 2"/>
+        <div class="release-meta">
+          <span class="badge">TBA</span>
+          <h4>Hell’s Paradise — Season 2</h4>
+        </div>
+      </article>
+
+      <article class="release-card">
+        <img src="image\Demon Slayer.png" alt="Demon Slayer — Movie"/>
+        <div class="release-meta">
+          <span class="badge">TBA</span>
+          <h4>Demon Slayer — Movie</h4>
+        </div>
+      </article>
+    </div>
+  </section>
+
+    <!-- ================= WATCH PLANNER ================= -->
+  <section id="planner" class="planner section">
+    <header class="section-head" data-aos="fade-up">
+      <h2 class="kicker">PLAN YOUR WATCHLIST</h2>
+      <h3 class="title">YOUR PERSONAL ANIME PLANNER</h3>
+      <p class="lead">PICK A TITLE, SET THE TIME, AND SAVE WITH SMART CONFLICT CHECKS.</p>
+    </header>
+
+    <form id="planner-form" class="planner-form" data-aos="fade-up">
+      <div class="form-row">
+        <label for="animeSelect">Anime</label>
+        <select id="animeSelect" required>
+          <option value="One Piece">One Piece</option>
+          <option value="Blue Lock">Blue Lock</option>
+          <option value="Classroom of the Elite">Classroom of the Elite</option>
+          <option value="Demon Slayer">Demon Slayer</option>
+          <option value="Chainsaw Man">Chainsaw Man</option>
+          <option value="Chainsaw Man">Naruto</option>
+          <option value="Your Name">Your Name</option>
+          <option value="Bleach">Bleach</option>
+          <option value="Berserk">Berserk</option>
+          <option value="Death Note">Death Note</option>
+          <option value="Dragon Ball Z">Dragon Ball Z</option>
+          <option value="Hajime no Ippo">Hajime no Ippo</option>
+          <option value="Hell’s Paradise">Hell’s Paradise</option>
+          <option value="I Want to Eat Your Pancreas">I Want to Eat Your Pancreas</option>
+          <option value="Vinland Saga">Vinland Saga</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="planDate">Day</label>
+        <input id="planDate" type="date" required />
+      </div>
+      <div class="form-row">
+        <label for="planTime">Time</label>
+        <input id="planTime" type="time" required />
+      </div>
+      <button type="submit" class="btn btn-primary">Add to Schedule</button>
+      <p class="form-note">Tip: Add multiple shows. We’ll warn you if they overlap.</p>
+    </form>
+
+    <div class="schedule" data-aos="fade-up">
+      <h4 class="schedule-title">Your Saved Schedule</h4>
+      <ul id="schedule-output" class="schedule-list"></ul>
+      <button id="clearSchedule" class="btn btn-ghost">Clear Schedule</button>
+    </div>
+  </section>
+
+  <!-- ================= SUPPORT (ISSUE FORM) ================= -->
+  <section id="support" class="support section">
+    <header class="section-head" data-aos="fade-up">
+      <h2 class="kicker">WE’VE GOT YOUR BACK</h2>
+      <h3 class="title">SUPPORT THAT LISTENS</h3>
+      <p class="lead">TELL US WHAT WENT WRONG — WE RESPOND FAST AND FIX FASTER.</p>
+    </header>
+
+    <form id="issue-form" class="support-form" data-aos="fade-up" novalidate>
+      <div class="form-row">
+        <input id="userName" type="text" placeholder="Your Name" required />
+        <input id="userEmail" type="email" placeholder="Your Email" required />
+      </div>
+      <textarea id="userMessage" placeholder="Describe your issue in detail..." rows="6" required></textarea>
+      <button type="submit" class="btn btn-primary">Submit Issue</button>
+      <p class="form-note">We’ll send a confirmation to your email with a ticket ID.</p>
+    </form>
+  </section>
+
+
+
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="foot-col">
+        <h5>About Anivio</h5>
+        <p>Anivio is a focused anime destination: discover trends, explore deep-cut spotlights, and plan your watch time without the noise.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#watch-now">Watch Now</a></li>
+          <li><a href="#spotlight">Spotlight</a></li>
+          <li><a href="#ranking">Ranking</a></li>
+          <li><a href="#upcoming">Upcoming</a></li>
+          <li><a href="#planner">Planner</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Help</h5>
+        <ul>
+          <li><a href="#support">Support</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Report Abuse</a></li>
+          <li><a href="#">Terms & Privacy</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Newsletter</h5>
+        <p>Get a monthly digest of hidden gems and release calendars.</p>
+        <form class="newsletter" id="newsletterForm" novalidate>
+          <input id="newsletterEmail" type="email" placeholder="Email address" required/>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-base">© 2025 Anivio. All rights reserved.</div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="app.js"></script>
+  <script>
+    // Ensure AOS has no delays
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.AOS) AOS.init({ once: true, duration: 800, easing: 'ease-out', offset: 100 });
+    });
+  </script>
+</body>
+</html>
